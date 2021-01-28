@@ -49,7 +49,7 @@ main {
     margin-left: 30px;
 }
 .hp {
-    transition: 1s;
+    transition: 0.3s;
     background-color: red;
     position: relative;
     height: 30px;
@@ -68,19 +68,4 @@ main {
     left: 150px;
     font-weight: bold;
     font-size: 55px;
-}
-.bodyArmor {
-    position: fixed;
-    top: 50px;
-    margin-left: 270px;
-    margin-top: 60px;
-    z-index: 2;
-    border-radius: 15px;
-}
-.headArmor {
-    position: fixed;
-    margin-left: 320px;
-    margin-top: 60px;
-    z-index: 2;
-    border-radius: 15px;
 }
