@@ -1,19 +1,41 @@
 let hpbar = document.querySelector('.hpbar')
 let hitBtn = document.querySelector('.hit')
 let hpBarBg = document.querySelector('.hp')
-let hp = 100;
-let number;
-let fistImg = document.querySelector('.fist')
 let hpDisplay = document.querySelector('.hpDisplay')
+let fistImg = document.querySelector('.fist')
 let faceImg = document.querySelector('.face')
+let bodyArmor = document.querySelector('.bodyArmor')
+let headArmor = document.querySelector('.headArmor')
 
-function updageHpBar() {
-    hpDisplay.innerHTML = hp
-    hpbar.style.width = hp  + '%'
+let ded = {
+    hp: 100,
+    bodyArmor: 0,
+    headArmor: 0,
+    deathCount: 0
+}
+console.log(ded)
+
+function addArmor() {
+    if (ded.bodyArmor < 3) {
+        ded.bodyArmor++
+        bodyArmor.src = './img/armor' + ded.bodyArmor + '.png'
+        ded.deathCount++
+    } else {
+        ded.headArmor++
+        headArmor.src = './img/head' + ded.headArmor + '.png'
+        ded.deathCount++
+    }
+    console.log(ded)
+}
+
+
+
+function updateHpBar() {
+    hpDisplay.innerHTML = ded.hp
+    hpbar.style.width = ded.hp + '%'
 }
 
 setInterval(() => {
-    hpBarBg.style.transition = '1s'
     if (hpBarBg.style.backgroundColor == 'red') {
         hpBarBg.style.backgroundColor = 'grey'
     } else {
@@ -21,7 +43,7 @@ setInterval(() => {
     }
 }, 500);
 
-updageHpBar()
+updateHpBar()
 const faces = [
     './img/x1.png',
     './img/x2.png',
@@ -30,12 +52,17 @@ const faces = [
 ]
 
 hitBtn.onclick = () => {
+
     hit()
-    if (hp == 20) {
-        hpDisplay.innerHTML = hp = 10
+    if (ded.hp == 20) {
+        addArmor()
+
+        hpDisplay.innerHTML = ded.hp = 10
+        ded.deathCount++
         healing()
+
     } else {
-        hp -= 10
+        ded.hp -= 10
     }
 }
 
@@ -51,19 +78,20 @@ function hit() {
         hitBtn.disabled = false
         faceImg.src = faces[0]
 
-        updageHpBar()
+        updateHpBar()
 
     }, 200);
 }
 
 function healing() {
-    if (hp == 100) {
+
+    if (ded.hp == 100) {
         hitBtn.disabled = false
         faceImg.src = faces[0]
     } else {
 
         setTimeout(() => {
-            hp += 10
+            ded.hp += 10
             hitBtn.disabled = true
 
             if (faceImg.src.match('x3.png')) {
@@ -73,10 +101,10 @@ function healing() {
                 faceImg.src = faces[2]
             }
 
-            hpDisplay.innerHTML = hp
+            hpDisplay.innerHTML = ded.hp
             healing()
-            console.log('healing' + hp)
+            // console.log('healing' + ded.hp)
         }, 500);
     }
-    updageHpBar()
+    updateHpBar()
 }
