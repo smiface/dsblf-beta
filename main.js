@@ -1,19 +1,46 @@
 let hpbar = document.querySelector('.hpbar')
 let hitBtn = document.querySelector('.hit')
 let hpBarBg = document.querySelector('.hp')
-let hp = 100;
-let number;
-let fistImg = document.querySelector('.fist')
 let hpDisplay = document.querySelector('.hpDisplay')
+let fistImg = document.querySelector('.fist')
 let faceImg = document.querySelector('.face')
+let bodyArmor = document.querySelector('.bodyArmor')
+let headArmor = document.querySelector('.headArmor')
 
-function updageHpBar() {
-    hpDisplay.innerHTML = hp
-    hpbar.style.width = hp  + '%'
+let ded = {
+    hp: 100,
+    bodyArmor: 0,
+    headArmor: 0,
+    deathCount: 0,
+    isHealing: false
+}
+
+let damageSum = function () {
+    return (
+        10 - ded.bodyArmor * 2 - ded.headArmor * 1
+    )
+}
+
+function addArmor() {
+    if (ded.bodyArmor < 3) {
+        ded.bodyArmor++
+        bodyArmor.src = './img/armor' + ded.bodyArmor + '.png'
+    } else {
+        if (ded.headArmor < 3) {
+            ded.headArmor++
+            headArmor.src = './img/head' + ded.headArmor + '.png'
+
+        }
+    }
+}
+
+
+function updateHpBar() {
+    hpDisplay.innerHTML = ded.hp
+    hpbar.style.width = ded.hp + '%'
 }
 
 setInterval(() => {
-    hpBarBg.style.transition = '1s'
     if (hpBarBg.style.backgroundColor == 'red') {
         hpBarBg.style.backgroundColor = 'grey'
     } else {
@@ -21,7 +48,7 @@ setInterval(() => {
     }
 }, 500);
 
-updageHpBar()
+updateHpBar()
 const faces = [
     './img/x1.png',
     './img/x2.png',
@@ -30,17 +57,22 @@ const faces = [
 ]
 
 hitBtn.onclick = () => {
+    if (ded.deathCount > 10) {
+        alert('Отстань от деда')
+    }
+    hitBtn.disabled = true
     hit()
-    if (hp == 20) {
-        hpDisplay.innerHTML = hp = 10
+    if (ded.hp < 21) {
+        addArmor()
+        hpDisplay.innerHTML = ded.hp -= damageSum()
+        ded.deathCount++
         healing()
     } else {
-        hp -= 10
+        ded.hp -= damageSum()
     }
 }
 
 function hit() {
-    hitBtn.disabled = true
     fistImg.src = './img/fist2.png'
     fistImg.style.left = '200px'
     faceImg.src = faces[1]
@@ -48,24 +80,25 @@ function hit() {
     setTimeout(() => {
         fistImg.style.left = '400px'
         fistImg.src = './img/fist1.png'
-        hitBtn.disabled = false
         faceImg.src = faces[0]
-
-        updageHpBar()
-
+        updateHpBar()
+        if (ded.isHealing == false) {
+            hitBtn.disabled = false
+        }
     }, 200);
 }
 
 function healing() {
-    if (hp == 100) {
-        hitBtn.disabled = false
+    ded.isHealing = true
+    if (ded.hp > 90) {
+        hpDisplay.innerHTML = ded.hp = 100
         faceImg.src = faces[0]
+        ded.isHealing = false
+        hitBtn.disabled = false
     } else {
-
+        hitBtn.disabled = true
         setTimeout(() => {
-            hp += 10
-            hitBtn.disabled = true
-
+            ded.hp += 10
             if (faceImg.src.match('x3.png')) {
                 faceImg.src = faces[3]
                 console.log(faceImg.src)
@@ -73,10 +106,9 @@ function healing() {
                 faceImg.src = faces[2]
             }
 
-            hpDisplay.innerHTML = hp
+            hpDisplay.innerHTML = ded.hp
             healing()
-            console.log('healing' + hp)
         }, 500);
     }
-    updageHpBar()
+    updateHpBar()
 }
