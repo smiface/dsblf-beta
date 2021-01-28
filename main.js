@@ -21,9 +21,11 @@ function addArmor() {
         bodyArmor.src = './img/armor' + ded.bodyArmor + '.png'
         ded.deathCount++
     } else {
-        ded.headArmor++
-        headArmor.src = './img/head' + ded.headArmor + '.png'
-        ded.deathCount++
+        if (ded.headArmor < 3) {
+            ded.headArmor++
+            headArmor.src = './img/head' + ded.headArmor + '.png'
+            ded.deathCount++
+        }
     }
     console.log(ded)
 }
@@ -103,7 +105,6 @@ function healing() {
 
             hpDisplay.innerHTML = ded.hp
             healing()
-            // console.log('healing' + ded.hp)
         }, 500);
     }
     updateHpBar()
