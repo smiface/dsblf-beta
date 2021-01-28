@@ -1,3 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Balsamiq Sans", cursive;
+    color: rgb(235, 235, 235);
+}
+.version {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    color: red;
+}
 body {
     background-color: rgb(199, 191, 191);
     background-image: url("https://saintbasil.ru/img.php?ipt=https://3dnews.ru/assets/external/illustrations/2020/02/21/1004190/1.jpg");
@@ -16,10 +30,12 @@ main {
 }
 .hit {
     background-color: grey;
+    border-radius: 10px;
     width: 300px;
-    color: white;
     font-size: 25px;
     margin-bottom: 50px;
+    margin-top: 50px;
+    outline: none;
 }
 .fist {
     transition: 0.05s;
@@ -45,7 +61,6 @@ main {
     position: absolute;
     z-index: 2;
     color: rgb(200, 198, 198);
-    /* margin-top: 28px; */
     margin-left: 30px;
 }
 .hp {
