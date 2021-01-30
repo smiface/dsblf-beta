@@ -6,25 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Puzo fight</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://static-cdn.jtvnw.net/jtv_user_pictures/4bbdf7cb-22e2-4a3a-8ec1-c86e57a4ed78-profile_image-70x70.png" type="image/gif" sizes="16x16">
+    <link rel="icon"
+        href="https://static-cdn.jtvnw.net/jtv_user_pictures/4bbdf7cb-22e2-4a3a-8ec1-c86e57a4ed78-profile_image-70x70.png"
+        type="image/gif" sizes="16x16">
 </head>
 
 <body>
-    <p class="version">v0.4</p>
+    <p class="version">v0.5</p>
     <main>
-        <button class="hit">дать в пузо</button>
+
+        <div class="hits">
+            <button class="hitLeft">дать в пузо с левой </button>
+            <button class="hitRight">дать в пузо с правой </button>
+        </div>
+
         <div class="hp">
             <div class="hpDisplay"></div>
+            <div class="deathDisplay">123</div>
             <img src="./img/armor0.png" alt="" class="bodyArmor">
             <img src="./img/head0.png" alt="" class="headArmor">
             <img src="./img/hp.png" alt="" srcset="">
             <div class="hpbar"></div>
         </div>
+
         <div class="man">
-            <img src="./img/man.png" alt="">
+            <img class="fistLeft" src="./img/fist3.png" alt="" srcset="">
+
+            <img class="body" src="./img/man.png" alt="">
             <img class="face" src="./img/x1.png" alt="">
-            <img class="fist" src="./img/fist1.png" alt="" srcset="">
+            <img class="fistRight" src="./img/fist1.png" alt="" srcset="">
+
         </div>
+
         <div class="damage"></div>
     </main>
 

@@ -16,38 +16,88 @@ body {
     background-color: rgb(199, 191, 191);
     background-image: url("https://saintbasil.ru/img.php?ipt=https://3dnews.ru/assets/external/illustrations/2020/02/21/1004190/1.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
     height: 900px;
     display: flex;
     justify-content: center;
 }
 main {
     position: relative;
-    width: 350px;
     display: flex;
     flex-direction: column;
+    width: 100%;
     align-items: center;
 }
-.hit {
+.hits {
+    margin-bottom: 50px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-left: 50px;
+}
+.hitRight {
+    position: relative;
     background-color: grey;
     border-radius: 10px;
-    width: 300px;
+    width: 200px;
     font-size: 25px;
-    margin-bottom: 50px;
-    margin-top: 50px;
     outline: none;
 }
-.fist {
-    transition: 0.05s;
-    margin-top: 50px;
+
+.hitLeft {
+    position: relative;
+    background-color: grey;
+    border-radius: 10px;
+    width: 200px;
+    font-size: 25px;
+    outline: none;
+    margin-right: 10px;
 }
-.man img:nth-child(2) {
+
+.man {
+    width: 600px;
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+}
+
+.body {
+    margin-left: 150px;
+}
+
+.face {
+    height: 180px;
+    width: unset;
+    margin-left: -250px;
+}
+
+.fistLeft {
     position: absolute;
+    transition: 0.05s;
+    width: unset;
+    height: 100px;
+    margin-top: 250px;
+    margin-left: -50px;
+    /* margin-left: 200px; */
+    
+}
+.fistRight {
+    position: absolute;
+    transition: 0.05s;
+    width: unset;
+    height: 100px;
+    margin-top: 250px;
+    
+    margin-left: 500px;
+    /* margin-left: 300px; */
+}
+
+.man img:nth-child(2) {
     left: 100px;
 }
 
 .man img:nth-child(3) {
-    position: absolute;
     top: 350px;
 }
 
@@ -62,7 +112,13 @@ main {
     position: absolute;
     z-index: 2;
     color: rgb(200, 198, 198);
-    margin-left: 30px;
+    margin-left: 33px;
+}
+.deathDisplay {
+    z-index: 5;
+    color: rgb(200, 198, 198);
+    position: absolute;
+    margin-left: 65px;
 }
 .hp {
     transition: 1s;
@@ -71,7 +127,8 @@ main {
     height: 30px;
     width: 270px;
     margin-left: 100px;
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .hp img {
     position: absolute;
@@ -88,15 +145,19 @@ main {
 .bodyArmor {
     position: fixed;
     top: 50px;
-    margin-left: 270px;
+    margin-left: 290px;
     margin-top: 60px;
     z-index: 2;
     border-radius: 15px;
+    height: 30px;
+    width: 30px;
 }
 .headArmor {
     position: fixed;
-    margin-left: 320px;
+    margin-left: 330px;
     margin-top: 60px;
     z-index: 2;
     border-radius: 15px;
+    height: 30px;
+    width: 30px;
 }
