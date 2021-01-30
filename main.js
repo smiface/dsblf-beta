@@ -18,8 +18,8 @@ let defaultDed = {
     armor: 0,
     deathCount: 0,
     isHealing: false,
-   
 }
+
 let  attackDelay = 300;
 let ded;
 
