@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Balsamiq Sans", cursive;
+    color: rgb(235, 235, 235);
+}
+.version {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    color: red;
+}
+body {
+    background-color: rgb(199, 191, 191);
+    background-image: url("https://saintbasil.ru/img.php?ipt=https://3dnews.ru/assets/external/illustrations/2020/02/21/1004190/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+
+    main {
+        position: relative;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .hits {
+            .hit {
+                background-color: grey;
+                border-radius: 10px;
+                width: 300px;
+                font-size: 25px;
+                margin-bottom: 50px;
+                margin-top: 50px;
+                outline: none;
+            }
+        }
+
+        .hp {
+            transition: 1s;
+            background-color: red;
+            position: relative;
+            // height: 30px;
+            width: 270px;
+            // margin-left: 100px;
+            // margin-top: 50px;
+            .bodyArmor {
+                // border: 5px red solid;
+                position: absolute;
+                top: 50px;
+                margin-left: 270px;
+                margin-top: -70px;
+                z-index: 2;
+                border-radius: 15px;
+            }
+            .headArmor {
+                position: absolute;
+                margin-left: 320px;
+                margin-top: 60px;
+                z-index: 2;
+                border-radius: 15px;
+            }
+            .hero {
+                position: absolute;
+                top: -80px;
+                left: -100px;
+            }
+            .hpbar {
+                background-color: white;
+                color: rgb(200, 200, 200);
+                height: 20px;
+                width: 280px;
+                z-index: 35;
+                transition: 0.3s;
+            }
+            .hpDisplay {
+                position: absolute;
+                z-index: 4;
+                color: rgb(200, 198, 198);
+                margin-left: 30px;
+            }
+        }
+        .man {
+            display: flex;
+            // justify-content: space-around;
+
+            .face {
+                position: fixed;
+                top: 0;
+                left: 100px;
+            }
+
+            img:nth-child(2) {
+                position: absolute;
+                left: 100px;
+            }
+
+            img:nth-child(3) {
+                position: absolute;
+                top: 350px;
+            }
+
+            .fist {
+                transition: 0.05s;
+                margin-top: 50px;
+            }
+        }
+    }
+
+    .damage {
+        position: fixed;
+        top: 350px;
+        left: 150px;
+        font-weight: bold;
+        font-size: 55px;
+    }
+}
