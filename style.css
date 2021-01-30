@@ -1,101 +1,175 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
-
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Balsamiq Sans", cursive;
-    color: rgb(235, 235, 235);
+  margin: 0;
+  padding: 0;
+  font-family: "Balsamiq Sans", cursive;
+  color: #ebebeb;
 }
-.version {
-    position: fixed;
-    bottom: 5px;
-    left: 5px;
-    color: red;
-}
+
 body {
-    background-color: rgb(199, 191, 191);
-    background-image: url("https://saintbasil.ru/img.php?ipt=https://3dnews.ru/assets/external/illustrations/2020/02/21/1004190/1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 900px;
-    display: flex;
-    justify-content: center;
-}
-main {
-    position: relative;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.hit {
-    background-color: grey;
-    border-radius: 10px;
-    width: 300px;
-    font-size: 25px;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    outline: none;
-}
-.fist {
-    transition: 0.05s;
-}
-.man img:nth-child(2) {
-    position: absolute;
-    left: 100px;
+  background-color: #c7bfbf;
+  background-image: url("https://saintbasil.ru/img.php?ipt=https://3dnews.ru/assets/external/illustrations/2020/02/21/1004190/1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.man img:nth-child(3) {
-    position: absolute;
-    top: 350px;
+body .version {
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  color: red;
 }
 
-.hpbar {
-    background-color: white;
-    height: 30px;
-    z-index: 35;
-    border: 1px red solid;
-    transition: 0.3s;
+body main {
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.hpDisplay {
-    position: absolute;
-    z-index: 2;
-    color: rgb(200, 198, 198);
-    margin-left: 30px;
+
+body main .hits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-.hp {
-    transition: 1s;
-    background-color: red;
-    position: relative;
-    height: 30px;
-    width: 270px;
-    margin-left: 100px;
-    margin-top: 50px;
+
+body main .hits .hit {
+  background-color: grey;
+  width: 45%;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: -10p;
 }
-.hp img {
-    position: absolute;
-    top: -80px;
-    left: -100px;
+
+body main .info {
+  overflow: hidden;
 }
-.damage {
-    position: absolute;
-    top: 350px;
-    left: 150px;
-    font-weight: bold;
-    font-size: 55px;
+
+body main .info .hp {
+  -webkit-transition: 1s;
+  transition: 1s;
+  width: 245px;
+  position: absolute;
+  top: 215px;
+  z-index: 1;
+  margin-left: 200px;
+  margin-top: -40px;
 }
-.bodyArmor {
-    position: fixed;
-    top: 50px;
-    margin-left: 270px;
-    margin-top: 60px;
-    z-index: 2;
-    border-radius: 15px;
+
+body main .info .hpbar {
+  background-color: white;
+  color: #c8c8c8;
+  height: 15px;
+  width: 10%;
+  z-index: 35;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
-.headArmor {
-    position: fixed;
-    margin-left: 320px;
-    margin-top: 60px;
-    z-index: 2;
-    border-radius: 15px;
+
+body main .info .bodyArmor {
+  position: relative;
+  left: 350px;
+  top: -40px;
+  z-index: 3;
+  border-radius: 5px;
 }
+
+body main .info .headArmor {
+  position: relative;
+  left: 350px;
+  top: -40px;
+  z-index: 3;
+  border-radius: 5px;
+}
+
+body main .info .deathCounter {
+  color: #c8c6c6;
+  position: relative;
+  top: -60px;
+  z-index: 3;
+  left: 200px;
+}
+
+body main .info .hero {
+  z-index: 2;
+  position: relative;
+}
+
+body main .info .hpDisplay {
+  position: relative;
+  z-index: 43;
+  color: #c8c6c6;
+  top: -100px;
+  left: 260px;
+}
+
+body main .man {
+  position: fixed;
+  top: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: flex;
+  width: 100%;
+}
+
+body main .man .face {
+  position: fixed;
+  margin: 0 auto;
+  top: 200px;
+}
+
+body main .man .fists {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  position: fixed;
+  margin-top: -50px;
+}
+
+body main .man .fistLeft {
+  margin-left: -250px;
+}
+
+body main .man .fistRight {
+  margin-left: 250px;
+}
+
+body main .man .fist {
+  -webkit-transition: 0.05s;
+  transition: 0.05s;
+  margin-top: 50px;
+}
+
+body .damage {
+  position: fixed;
+  margin: 0 auto;
+  top: 350px;
+  left: 50%;
+  color: black;
+  font-weight: bold;
+  font-size: 55px;
+}
+/*# sourceMappingURL=style.css.map */
