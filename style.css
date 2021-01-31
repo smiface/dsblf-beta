@@ -39,9 +39,11 @@ body main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 
 body main .hits {
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,6 +61,7 @@ body main .hits .hit {
 }
 
 body main .info {
+  z-index: 1;
   overflow: hidden;
 }
 
@@ -134,6 +137,7 @@ body main .man {
           justify-content: center;
   display: flex;
   width: 100%;
+  z-index: 1;
 }
 
 body main .man .face {
@@ -171,5 +175,13 @@ body .damage {
   color: black;
   font-weight: bold;
   font-size: 55px;
+}
+
+body .baloons {
+  position: absolute;
+  z-index: 0;
+  top: 550px;
+  max-height: 30vh;
+  width: contain;
 }
 /*# sourceMappingURL=style.css.map */

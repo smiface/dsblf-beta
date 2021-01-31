@@ -28,8 +28,10 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-
+overflow: hidden;
         .hits {
+            z-index: 1;
+
             display: flex;
             justify-content: space-between;
             .hit {
@@ -43,6 +45,7 @@ body {
         }
 
         .info {
+            z-index: 1;
             overflow: hidden;
             .hp {
                 transition: 1s;
@@ -103,6 +106,7 @@ body {
             justify-content: center;
             display: flex;
             width: 100%;
+            z-index: 1;
             .face {
                 position: fixed;
                 margin: 0 auto;
@@ -138,5 +142,13 @@ body {
         color: black;
         font-weight: bold;
         font-size: 55px;
+    }
+
+    .baloons {
+        position: absolute;
+        z-index: 0;
+        top: 550px;
+        max-height: 30vh;
+        width: contain;
     }
 }
