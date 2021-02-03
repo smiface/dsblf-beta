@@ -13,6 +13,12 @@ let headArmor = document.querySelector('.headArmor')
 let deathCounter = document.querySelector('.deathCounter')
 let damageDisplay = document.querySelector('.damage')
 
+function playRandomMoan() {
+    let number = Math.floor(Math.random() * 12)
+    let song = new Audio('./sounds/Moan ' + number + '.wav')
+    song.play()
+}
+
 let defaultDed = {
     hp: 100,
     armor: 0,
@@ -20,7 +26,7 @@ let defaultDed = {
     isHealing: false,
 }
 
-let  attackDelay = 300;
+let attackDelay = 300;
 let ded;
 
 if (localStorage.getItem('ded') == undefined) {
@@ -84,6 +90,7 @@ function hitSide(btn, action) {
     }
     btn.disabled = true
     action()
+    playRandomMoan()
     if (ded.hp < 21) {
         ded.armor++
         hpDisplay.innerHTML = ded.hp -= damageSum()
@@ -128,10 +135,10 @@ function hit(side, marginBefore, marginAfter, fistBefore, fistAfter) {
         if (ded.isHealing == false) {
             hitLeftBtn.disabled = false
         }
-    updateDamageDisplay(null)
+        updateDamageDisplay(null)
 
-    hitRightBtn.disabled = false
-    hitLeftBtn.disabled = false
+        hitRightBtn.disabled = false
+        hitLeftBtn.disabled = false
     }, attackDelay);
 }
 

@@ -8,7 +8,7 @@
 
 body {
   background-color: #c7bfbf;
-  background-image: url("https://saintbasil.ru/img.php?ipt=https://3dnews.ru/assets/external/illustrations/2020/02/21/1004190/1.jpg");
+  background-image: url("https://media.contentapi.ea.com/content/dam/apex-legends/common/map-comparison-slider-assets/apex-comparison-s2-shattered-forest-after.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -138,6 +138,11 @@ body main .man {
   display: flex;
   width: 100%;
   z-index: 1;
+}
+
+body main .man .body {
+  max-height: 650px;
+  margin-left: 30px;
 }
 
 body main .man .face {
