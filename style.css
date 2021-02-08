@@ -149,6 +149,7 @@ body main .man .face {
   position: fixed;
   margin: 0 auto;
   top: 200px;
+  max-width: 200px;
 }
 
 body main .man .fists {
