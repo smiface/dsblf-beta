@@ -20,6 +20,52 @@ body {
           justify-content: center;
 }
 
+body .overlay {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #0e0e10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body .overlay img {
+  height: 130px;
+  width: 130px;
+  margin-right: 50px;
+}
+
+body .overlay p {
+  font-size: 25px;
+  width: 370px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-bottom: 30px;
+  color: grey;
+}
+
+body .overlay button {
+  background-color: #802be0;
+  font-size: 24px;
+  padding: 10px;
+  opacity: none;
+  border-radius: 7px;
+  border: none;
+}
+
+body .overlay button a {
+  text-decoration: none;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
 body .version {
   position: fixed;
   bottom: 5px;

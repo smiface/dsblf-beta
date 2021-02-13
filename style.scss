@@ -17,6 +17,46 @@ body {
     display: flex;
     justify-content: center;
 
+    .overlay {
+        z-index: 999;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #0e0e10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+        img {
+            height: 130px;
+            width: 130px;
+            margin-right: 50px;
+        }
+
+        p {
+            font-size: 25px;
+            width: 370px;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            margin-bottom: 30px;
+            color: grey;
+        }
+
+        button {
+            background-color: #802be0;
+            font-size: 24px;
+            padding: 10px;
+            opacity: none;
+            border-radius: 7px;
+            border: none;
+
+            a {
+                text-decoration: none;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            }
+        }
+    }
+
     .version {
         position: fixed;
         bottom: 5px;
@@ -117,7 +157,6 @@ body {
                 margin: 0 auto;
                 top: 200px;
                 max-width: 200px;
-                
             }
             .fists {
                 transition: 0.2s;
