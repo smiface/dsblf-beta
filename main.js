@@ -14,8 +14,9 @@ let deathCounter = document.querySelector('.deathCounter')
 let damageDisplay = document.querySelector('.damage')
 
 function playRandomMoan() {
-    let number = Math.floor(Math.random() * 12)
-    let song = new Audio('./sounds/Moan ' + number + '.wav')
+    // let number = Math.floor(Math.random() * 12)
+    // let song = new Audio('./sounds/Moan ' + number + '.wav')
+    let song = new Audio('./sounds/sfx.wav')
     song.play()
 }
 
@@ -119,7 +120,7 @@ function hitLeft() {
 }
 
 function hit(side, marginBefore, marginAfter, fistBefore, fistAfter) {
-    side.src = fistAfter
+    // side.src = fistAfter
     side.style.marginLeft = marginAfter
     updateDamageDisplay('-' + damageSum())
     faceImg.src = './img/x2.png'
@@ -129,8 +130,8 @@ function hit(side, marginBefore, marginAfter, fistBefore, fistAfter) {
 
     setTimeout(() => {
         side.style.marginLeft = marginBefore
-        side.src = fistBefore
-        faceImg.src = './img/x1.png'
+        // side.src = fistBefore
+        // faceImg.src = './img/x1.png'
         updateHpBar()
         if (ded.isHealing == false) {
             hitLeftBtn.disabled = false

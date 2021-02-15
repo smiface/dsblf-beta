@@ -8,7 +8,7 @@
 
 body {
   background-color: #c7bfbf;
-  background-image: url("https://media.contentapi.ea.com/content/dam/apex-legends/common/map-comparison-slider-assets/apex-comparison-s2-shattered-forest-after.jpg");
+  background-image: url("https://cdn.discordapp.com/attachments/468501401350176798/810924469740240906/D182D0B0D182D183D181D0B0D0BBD0BED0BDD0B2D09CD0BED181D0BAD0B2D0B5LoveLifeTattoo.png");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -196,6 +196,7 @@ body main .man .face {
   margin: 0 auto;
   top: 200px;
   max-width: 200px;
+  display: none;
 }
 
 body main .man .fists {
